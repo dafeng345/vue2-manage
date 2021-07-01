@@ -25,7 +25,7 @@
             <span>当前城市：{{ city.name }}</span>
           </el-form-item>
           <el-form-item label="联系电话" prop="phone">
-            <el-input v-model.number="formData.phone" maxLength="11"></el-input>
+            <el-input type="text" v-model.number="formData.phone" maxlength="11" show-word-limit></el-input>
           </el-form-item>
           <el-form-item label="店铺简介" prop="description">
             <el-input v-model="formData.description"></el-input>
@@ -34,6 +34,7 @@
             <el-input v-model="formData.promotion_info"></el-input>
           </el-form-item>
           <el-form-item label="店铺分类">
+			  <!-- 级联选择器 [kæˈskeɪder] -->
             <el-cascader
               :options="categoryOptions"
               v-model="selectedCategory"
